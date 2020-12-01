@@ -18,7 +18,7 @@ Route.get('files/:id', 'FileController.show')
 // Routes that need authentication
 Route.group(() => {
     // Files
-    Route.post('files', 'FileController.store')
+    Route.post('/files', 'FileController.store')
 
     // Project (All routes in one declaration)
     Route.resource('projects', 'ProjectController')
@@ -28,5 +28,5 @@ Route.group(() => {
     // Tasks (All routes with project_id dependecy)
     Route.resource('projects.tasks', 'TaskController')
         .apiOnly()
-        .validator(new Map([[['projects.tasks.store', ['Task']]]]))
+        .validator(new Map([[['projects.tasks.store'], ['Task']]]))
 }).middleware(['auth'])

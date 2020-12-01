@@ -30,7 +30,7 @@ class ForgotPasswordController {
                 message => {
                     message
                         .to(user.email)
-                        .from('marcosjsfraga@gmail.com', 'Marcos | Declabs')
+                        .from('marcosjsfraga@gmail.com', 'Marcos')
                         .subject('Recuperação de senha')
                 }
             )

@@ -1,5 +1,7 @@
 'use strict'
 
+const Antl = use('Antl')
+
 class ResetPassword {
     get validateAll () {
         // Validates all fields before returning a message
@@ -12,6 +14,10 @@ class ResetPassword {
             token: 'required',
             password_confirmation: 'required|confirmed'
         }
+    }
+
+    get messages () {
+        return Antl.list('validation')
     }
 }
 
